@@ -1,14 +1,10 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.16"
-    }
-  }
-
-  required_version = ">= 1.2.0"
+provider "aws" {
+    region = "us-west-2"
 }
 
-provider "aws" {
-  region  = "us-west-2"
+module "s3" {
+    source = "./s3"
+    # bucket name should be unique
+    bucket_name = "armory-terraformer-ovi-demo-2"
+    object_ownership = "ObjectWriter"
 }
