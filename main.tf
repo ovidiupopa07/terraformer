@@ -5,7 +5,7 @@ provider "aws" {
 module "s3_bucket" {
     version = "3.10.1"
     source = "terraform-aws-modules/s3-bucket/aws"
-    bucket = "ovidiu-terraformer-gtm"
+    bucket = "terraformer-plugin-bucket"
     block_public_acls = true
     object_ownership = "ObjectWriter"
     block_public_policy = true
